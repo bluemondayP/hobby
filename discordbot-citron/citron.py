@@ -48,7 +48,7 @@ service = build('drive', 'v3', credentials=creds)
 
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = 'NTI4NDAyMjczODkwNzMwMDE1.DwhxaQ.m2xBGZsbVxxpsfEo0uMYQ4KOU7M'
+TOKEN = os.environ['DISCORD_BOT_TOKEN']
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
