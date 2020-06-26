@@ -12,6 +12,10 @@ from google.auth.transport.requests import Request
 import commands
 
 
+TEXT_CHANNEL_ID = 482325105767350274 # 任意のチャンネルID(int)
+
+
+
 
 # -------------google drive 認証-------------------------------------------------
 # If modifying these scopes, delete the file token.pickle.
@@ -44,7 +48,7 @@ service = build('drive', 'v3', credentials=creds)
 
 
 # 自分のBotのアクセストークンに置き換えてください
-TOKEN = '?????????????????????'
+TOKEN = 'NTI4NDAyMjczODkwNzMwMDE1.DwhxaQ.m2xBGZsbVxxpsfEo0uMYQ4KOU7M'
 
 # 接続に必要なオブジェクトを生成
 client = discord.Client()
@@ -66,6 +70,8 @@ def check_queue(e):
 async def on_ready():
     # 起動したらターミナルにログイン通知が表示される
     print('ログインしました')
+    channel = client.get_channel(TEXT_CHANNEL_ID)
+    await channel.send('おはよう！')
 
 # メッセージ受信時に動作する処理
 @client.event
